@@ -28,24 +28,6 @@ graph LR
     D --> E[Snowflake Warehouse]
     E --> F[Final Data Models / Reporting Layer]
 ```
-🧱 Project Structure
-
-```graphql
-Copy
-Edit
-orderflow-pipeline/
-│
-├── dags/                # Airflow DAGs for scheduling
-├── dbt/                 # dbt models, seeds, and macros
-│   ├── models/
-│   ├── seeds/
-│   └── dbt_project.yml
-├── docker/              # Docker setup files
-├── data/                # Raw CSV or JSON data files
-├── snowflake_setup/     # SQL scripts for Snowflake setup (if needed)
-├── README.md
-└── requirements.txt
-```
 ⚙️ Getting Started
 Clone the repository:
 
