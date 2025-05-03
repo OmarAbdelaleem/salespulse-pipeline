@@ -1,15 +1,93 @@
-Welcome to your new dbt project!
+# 🛒 orderflow-pipeline
 
-### Using the starter project
+An end-to-end data pipeline for processing and analyzing customer, product, and order data using modern data engineering tools. This project simulates a real-world e-commerce analytics workflow from raw data ingestion to final data models and dashboards.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## 🚀 Tech Stack
 
+- **dbt (Data Build Tool)** – For transforming raw data into clean, analytics-ready models.
+- **Apache Airflow** – For orchestrating and scheduling the pipeline workflow.
+- **Snowflake** – Cloud-based data warehouse used to store and query the data.
+- **Docker** – To containerize the development environment and ensure consistency.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## 📊 Dataset Overview
+
+The pipeline processes synthetic e-commerce data related to:
+
+- Customers
+- Products
+- Orders
+- Order Items (Parts requested)
+
+## 🔁 Pipeline Flow
+
+```mermaid
+graph LR
+    A[Raw Data] --> B[Staging with dbt]
+    B --> C[Transformations - dbt models]
+    C --> D[Airflow DAG Execution]
+    D --> E[Snowflake Warehouse]
+    E --> F[Final Data Models / Reporting Layer]
+```
+🧱 Project Structure
+
+```graphql
+Copy
+Edit
+orderflow-pipeline/
+│
+├── dags/                # Airflow DAGs for scheduling
+├── dbt/                 # dbt models, seeds, and macros
+│   ├── models/
+│   ├── seeds/
+│   └── dbt_project.yml
+├── docker/              # Docker setup files
+├── data/                # Raw CSV or JSON data files
+├── snowflake_setup/     # SQL scripts for Snowflake setup (if needed)
+├── README.md
+└── requirements.txt
+```
+⚙️ Getting Started
+Clone the repository:
+
+```
+git clone https://github.com/yourusername/orderflow-pipeline.git
+cd orderflow-pipeline
+```
+Start Docker containers:
+
+```
+docker-compose up
+```
+Access Airflow UI:
+```
+URL: http://localhost:8080
+```
+Use the interface to trigger the pipeline DAG.
+
+Run dbt transformations:
+```
+cd dbt/
+dbt run
+dbt test
+```
+✅ Output
+Clean, modeled data available in Snowflake
+
+End-to-end orchestration handled by Airflow
+
+Modular, testable dbt transformation logic
+
+Ready-to-analyze datasets for dashboards and business intelligence
+
+📌 Key Learnings
+Orchestrating modern data pipelines using Airflow
+
+Developing scalable data models with dbt
+
+Managing isolated environments with Docker
+
+Working with cloud-based data warehouses like Snowflake
+
+📮 Contact
+For feedback, questions, or collaboration, feel free to reach out on LinkedIn.
+
