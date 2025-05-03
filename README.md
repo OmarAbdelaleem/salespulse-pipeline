@@ -32,8 +32,8 @@ graph LR
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/orderflow-pipeline.git
-cd orderflow-pipeline
+git clone https://github.com/OmarAbdelaleem/salespulse-pipeline.git
+cd salespulse-pipeline
 ```
 Start Docker containers:
 
