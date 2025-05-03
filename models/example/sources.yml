@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: finance_db
+    schema: raw
+    tables:
+      - name: customers
+        description: "This table contains customer data"
+        columns:
+          - name: id
+            description: "The unique identifier for each customer"
+          - name: name
+            description: "The first name of the customer"
+          - name: email
+            description: "The email address of the customer"
+          - name: country
+            description: "The country where the customer resides"
+
+      - name: orders
+        description: "This table contains order data"
+        columns:
+          - name: id
+            description: "The unique identifier for each order"
+          - name: customer_id
+            description: "The unique identifier for the customer who placed the order"
+          - name: total_amount
+            description: "The total amount of the order"
+          - name: order_date
+            description: "The date when the order was placed"
+          - name: status
+            description: "The status of the order (e.g., completed, pending, canceled)"
+
+      - name: products
+        description: "This table contains product data"
+        columns:
+          - name: id
+            description: "The unique identifier for each product"
+          - name: name
+            description: "The name of the product"
+          - name: category
+            description: "The category to which the product belongs"
+          - name: price
+            description: "The price of the product"
+        
+      - name: order_items
+        description: "This table contains order item data"
+        columns:
+          - name: id
+            description: "The unique identifier for each order item"
+          - name: order_id
+            description: "The unique identifier for the order to which this item belongs"
+          - name: product_id
+            description: "The unique identifier for the product in this order item"
+          - name: quantity
+            description: "The quantity of the product in this order item"
+          - name: unit_price
+            description: "The price of the product at the time of the order"
