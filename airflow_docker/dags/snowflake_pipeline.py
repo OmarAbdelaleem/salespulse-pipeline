@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
 # Define default arguments for the DAG
@@ -13,10 +13,10 @@ default_args = {
 
 # Define the DAG
 dag = DAG(
-    'dbt_snowflake_workflow',
+    'snowflake_pipeline',
     default_args=default_args,
     description='Run dbt models using dbt Core',
-    schedule='@daily',  # Run daily
+    schedule_interval='@daily',  # Run daily
     catchup=False,
 )
 
