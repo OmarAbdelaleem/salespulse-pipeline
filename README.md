@@ -1,4 +1,4 @@
-# 🛒 orderflow-pipeline
+# 🛒 salespulse-pipeline
 
 An end-to-end data pipeline for processing and analyzing customer, product, and order data using modern data engineering tools. This project simulates a real-world e-commerce analytics workflow from raw data ingestion to final data models and dashboards.
 
